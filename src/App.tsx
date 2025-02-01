@@ -1,23 +1,56 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Navbar from "./Navbar";
 
 function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <p className="read-the-docs">
-        Placeholder
-      </p>
-    </>
+    <div className="app-container">
+      <Navbar />
+      <section id="inicio" className="section">
+        <h1>Inicio</h1>
+        <p>
+          Welcome to the site—this top section might contain a hero image or
+          introduction text, etc.
+        </p>
+      </section>
+
+      <section id="bio" className="section">
+        <h1>Bio</h1>
+        <p>
+          Biography or personal information goes here. Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit.
+        </p>
+      </section>
+
+      <section id="discos" className="section">
+        <h1>Discos</h1>
+        <p>Discography, releases, etc.</p>
+      </section>
+
+      <section id="fotos" className="section">
+        <h1>Fotos</h1>
+        <p>Photo gallery or images.</p>
+      </section>
+
+      <section id="videos" className="section">
+        <h1>Videos</h1>
+        <p>Embedded videos, YouTube links, etc.</p>
+      </section>
+
+      <section id="proyectos" className="section">
+        <h1>Proyectos</h1>
+        <p>Projects and collaborations.</p>
+      </section>
+
+      <section id="textos" className="section">
+        <h1>Textos</h1>
+        <p>Written works or articles.</p>
+      </section>
+
+      <section id="novedades" className="section">
+        <h1>Novedades</h1>
+        <p>News, latest announcements, etc.</p>
+      </section>
+    </div>
   );
 }
 
