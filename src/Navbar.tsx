@@ -1,8 +1,9 @@
+import styles from "./Navbar.module.css";
+
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <ul className="nav-list">
-        {/* Each link scrolls smoothly to its corresponding section */}
+    <nav className={styles.navbar}>
+      <ul className={styles.navList}>
         <li>
           <a href="#inicio">Inicio</a>
         </li>

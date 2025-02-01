@@ -21,35 +21,6 @@ body {
   border: 2px dashed red; /* Debug border */
 }
 
-/* Sticky navbar at the top */
-.navbar {
-  position: sticky;
-  margin: 0;
-  top: 0; /* stick to the top */
-  z-index: 999; /* ensure it appears above other elements */
-  background-color: #000;
-  border-bottom: 1px solid #333;
-  padding: 0.5rem 1rem;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-list li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-list li a:hover {
-  color: #0ff; /* a highlight color on hover */
-}
-
-/* Sections */
 .section {
   min-height: 80vh; /* just to space them out */
   padding: 3rem;
