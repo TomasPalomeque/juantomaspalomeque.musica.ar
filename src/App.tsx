@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 
 function App() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    description: "",
+    NAME: "",
+    EMAIL: "",
+    PHONE: "",
+    DESCRIPTION: "",
   });
 
   const handleChange = (
@@ -36,10 +36,10 @@ function App() {
       if (response.ok) {
         alert("Mensaje enviado!");
         setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          description: "",
+          NAME: "",
+          EMAIL: "",
+          PHONE: "",
+          DESCRIPTION: "",
         });
       } else {
         alert("No se pudo enviar el mensaje.");
@@ -105,7 +105,7 @@ function App() {
             name="NAME"
             type="text"
             placeholder="Nombre"
-            value={formData.name}
+            value={formData.NAME}
             onChange={handleChange}
             required
           />
@@ -113,7 +113,7 @@ function App() {
             name="EMAIL"
             type="email"
             placeholder="Email"
-            value={formData.email}
+            value={formData.EMAIL}
             onChange={handleChange}
             required
           />
@@ -121,21 +121,21 @@ function App() {
             name="PHONE"
             type="tel"
             placeholder="Telefono"
-            value={formData.phone}
+            value={formData.PHONE}
             onChange={handleChange}
             required
           />
           <textarea
             name="DESCRIPTION"
             placeholder="Mensaje"
-            value={formData.description}
+            value={formData.DESCRIPTION}
             onChange={handleChange}
             required
           ></textarea>
           <button type="submit">Enviar</button>
         </form>
       </section>
-    </div> //
+    </div>
   );
 }
 
