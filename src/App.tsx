@@ -1,7 +1,54 @@
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./Navbar";
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    description: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzvL-JrTKWnpcsC9CozTfDO1K5s_eku7aVNo6sRXHuNKQNEya9rmmhgkzzzW0Bz5Og6/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
+        alert("Mensaje enviado!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          description: "",
+        });
+      } else {
+        alert("No se pudo enviar el mensaje.");
+      }
+    } catch (error) {
+      console.error("Error para enviar el mensaje:", error);
+    }
+  };
+
   return (
     <div className="app-container">
       <Navbar />
@@ -50,7 +97,45 @@ function App() {
         <h1>Novedades</h1>
         <p>News, latest announcements, etc.</p>
       </section>
-    </div>
+
+      <section id="contacto" className="section">
+        <h1>Contacto</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="NAME"
+            type="text"
+            placeholder="Nombre"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="EMAIL"
+            type="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="PHONE"
+            type="tel"
+            placeholder="Telefono"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="DESCRIPTION"
+            placeholder="Mensaje"
+            value={formData.description}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </div> //
   );
 }
 
