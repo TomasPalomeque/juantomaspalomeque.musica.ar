@@ -24,7 +24,7 @@ function App() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzvL-JrTKWnpcsC9CozTfDO1K5s_eku7aVNo6sRXHuNKQNEya9rmmhgkzzzW0Bz5Og6/exec",
+        "https://script.google.com/macros/s/AKfycbxGkdUCS6EqOB9Dtq0TDsRvu9lFBK0ZVzjsk-MDIEV_PL0YvYg8cejJ2CiZMRqnR2N-/exec",
         {
           method: "POST",
           headers: {
