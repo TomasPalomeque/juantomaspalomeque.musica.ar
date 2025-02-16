@@ -1,7 +1,30 @@
+import { useState } from "react";
 import "./App.css";
 import Navbar from "./Navbar";
 
 function App() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          setIsSubmitted(true);
+          form.reset();
+        } else {
+          alert("No se pudo enviar el mensaje.");
+        }
+      })
+      .catch(() => alert("Error al enviar el mensaje."));
+  };
+
   return (
     <div className="app-container">
       <Navbar />
@@ -56,6 +79,7 @@ function App() {
         <form
           action="https://script.google.com/macros/s/AKfycbwLDo7TII8YJq0Pi3XKMmdXnM4OpPRDTe2EFc83knHAekbNT-f1WL9Ricq03zswnmU1/exec"
           method="POST"
+          onSubmit={handleSubmit}
         >
           <input name="NAME" type="text" placeholder="Nombre" required />
           <input name="EMAIL" type="email" placeholder="Email" required />
@@ -68,6 +92,16 @@ function App() {
           <button type="submit">Enviar</button>
         </form>
       </section>
+
+      {isSubmitted && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Mensaje enviado!</h2>
+            <p>Tu mensaje ha sido enviado correctamente.</p>
+            <button onClick={() => setIsSubmitted(false)}>Cerrar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
