@@ -77,7 +77,7 @@ function App() {
       <section id="contacto" className="section">
         <h1>Contacto</h1>
         <form
-          action="https://script.google.com/macros/s/AKfycbwcwsxGHhGRmIY7LAk5tqTRdEdQdfmLdGZRkMCC5KUuRUVo1Rj-iFF0xB-S_1pQDB9SWA/exec"
+          action="https://script.google.com/macros/s/AKfycbwO0wdofwArUMij40aseTJ8vROZOg8E-EqXM54HmFUii60iXxz4qoGtS2WYITPsRtKJxA/exec"
           method="POST"
           onSubmit={handleSubmit}
         >
