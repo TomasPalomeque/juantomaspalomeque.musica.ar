@@ -30,10 +30,18 @@ function App() {
       <Navbar />
       <section id="inicio" className="section">
         <h1>Inicio</h1>
-        <p>
-          Welcome to the site—this top section might contain a hero image or
-          introduction text, etc.
-        </p>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/6r_-ZWlm_eA?si=F-MflVq0GGlIb-w2"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </section>
 
       <section id="bio" className="section">
